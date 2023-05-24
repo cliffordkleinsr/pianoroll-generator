@@ -1,4 +1,7 @@
 # pianoroll-generator
+![PyPI - License](https://img.shields.io/pypi/l/pianogen)
+[![PyPI](https://img.shields.io/pypi/v/pianogen)](https://pypi.org/project/pianogen/)
+
 Pianoroll-generator A package to generate pianoroll (NPZ) datasets
 
 ### Getting Started
