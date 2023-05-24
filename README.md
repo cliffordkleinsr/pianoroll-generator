@@ -51,7 +51,7 @@ TODO
 ==================
 1. [ ] command line arguments with user defined inputs
 2. [ ] GUI
-3. [ ] PYPI
+3. [X] PYPI
         
     
     
