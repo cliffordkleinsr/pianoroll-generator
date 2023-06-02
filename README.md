@@ -46,23 +46,22 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
         drive.parse() # parse the midi dir based on the json conditional list of same track files
         # you will endup with a pianoroll dataset at the root of your project dir
         ```
-Citations
-========
+# Citations
 ```
-@InProceedings{salu2018pypianoroll,
-   author    = {Hao-Wen Dong, Wen-Yi Hsiao, and Yi-Hsuan Yang},
-   title     = {Pypianoroll: Open Source Python Package for Handling Multitrack Pianorolls},
-   booktitle = {in Late-Breaking Demos of the 19th International Society for Music Information Retrieval Conference (ISMIR)},
-   date      = {2018}
-}
-```
+   @InProceedings{salu2018pypianoroll,
+      author    = {Hao-Wen Dong, Wen-Yi Hsiao, and Yi-Hsuan Yang},
+      title     = {Pypianoroll: Open Source Python Package for Handling Multitrack Pianorolls},
+      booktitle = {in Late-Breaking Demos of the 19th International Society for Music Information Retrieval Conference (ISMIR)},
+      date      = {2018}
+   }
+   ```
 [ISMIR](https://salu133445.github.io/pypianoroll/pdf/pypianoroll-ismir2018-lbd-paper.pdf)
 
-TODO
-==================
-1. [ ] command line arguments with user defined inputs
-2. [ ] GUI
-3. [X] PYPI
+# TODO
+
+   1. [ ] command line arguments with user defined inputs
+   2. [ ] GUI
+   3. [X] PYPI
         
     
     
