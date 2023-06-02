@@ -33,7 +33,7 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
 
         fldr = 'midis' #specify the folder where your midis are stored
         processor = MidiFileProcessor(fldr) # midi processor object
-        processor.get_listItems()# generate a list of miifiles in json format
+        processor.get_listItems()# generate a list of midi files in json format
         # the json will be stored at the root directory of your project
         ```
     2. To now generate the dense dataset run the following  code
