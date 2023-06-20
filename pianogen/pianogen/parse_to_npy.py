@@ -21,7 +21,7 @@ class MidiParser(Multitrack):
     ) -> None:
         
         #all_files = glob.glob(join(self.fldr, '*mid'))
-        with open('common_files.json','r') as opfile:
+        with open('utilities/common_files.json','r') as opfile:
             common_files = json.load(opfile)   
         return common_files
 
@@ -68,18 +68,19 @@ class MidiParser(Multitrack):
             pianoroll = pianoroll[:, 24:108]
 
             # Reshape and get the phrase pianorolls
+            #Original shape: (num_time_steps, 4 * num_beats, num_pitches, num_tracks)
             pianoroll = pianoroll.reshape(-1, 4 * self.BEAT_RESOLUTION, 84, N_TRACKS)
             self.results.append(np.concatenate(
                 [pianoroll[:-3], pianoroll[1:-2], pianoroll[2:-1], pianoroll[3:]], 1))
 
             result = np.concatenate(self.results, 0)
-            
-            print('Original shape: ', result.shape)
+            #New shape: (-1, 4 * num_beats, num_pitches, num_tracks)
+            #print('Original shape: ', result.shape)
             
             result = result.reshape(-1, RESHAPE_PARAMS['num_bar'], RESHAPE_PARAMS['num_timestep'],
                         RESHAPE_PARAMS['num_pitch'], RESHAPE_PARAMS['num_track'])
 
-            print('New shape: ', result.shape)
+            #print('New shape: ', result.shape)
             
         # NOTE: You might want to shuffle the training data here
         np.savez_compressed(

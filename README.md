@@ -47,8 +47,8 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
 TODO
 ==================
 1. [ ] command line arguments with user defined inputs
-2. [ ] GUI
-3. [ ] PYPI
+2. [x] Add support for own track checking from list of midis
+3. [x] PYPI
         
     
     
