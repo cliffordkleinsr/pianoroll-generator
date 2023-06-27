@@ -3,10 +3,7 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
 
 ### Getting Started
 ------------------------
-1. Using the PYPI package.
-   - To use it use the command: `pip install pianogen` to install all the necessary packages
-
-2. Building from the source 
+1. Building from the source 
    - First clone the repository to your local directory with `git`
    - Open your local Terminal/Command Shell and run the following commands:
    
@@ -23,32 +20,40 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
     - TO GENERATE A DENSE NPZ DATASET, first Download some midi files and place them in the ***midis*** directory 
     > ***Note*** the midis is an arbitrary dir, it can be named A anything
     - On either your python terminal or idle shell run the following codes:
-    1. To create a list of files with common tracks
+    1. To create a list of files with common tracks default mode is processing the list of midi files
  
         ```PY
-        from pianogen import MidiFileProcessor
-
-        fldr = 'midis' #specify the folder where your midis are stored
-        processor = MidiFileProcessor(fldr) # midi processor object
-        processor.get_listItems()# generate a list of miifiles in json format
-        # the json will be stored at the root directory of your project
+        python inference.py -t 'Your specified number of tracks'
         ```
-    2. To now generate the dense dataset run the following  code
+    2. To now generate the dense dataset run the following  code set the inference mode to parsing
         ```py
-        from pianogen import MidiParser
-        
-        fname = 'train_x_phr.npz'#output fname of your pianoroll
-        
-        drive = MidiParser(fname) # parser object
-        drive.parse() # parse the midi dir based on the json conditional list of same track files
-        # you will endup with a pianoroll dataset at the root of your project dir
+         python inference.py --mode 'process' 
         ```
+
+    3. Run help:
+       ```py
+       python inference.py --help
+       ```
+       returns:
+       ```bash
+       usage: inference.py [-h] [-i FILEPATH] [-t TRACKS] [-o OUTPUT] [--mode MODE]
+       options:
+        -h, --help            show this help message and exit
+        -i FILEPATH, --filepath FILEPATH
+                              Path to your midi files.
+        -t TRACKS, --tracks TRACKS
+                              Number of tracks.
+        -o OUTPUT, --output OUTPUT
+                              output fname of your pianoroll.
+        --mode MODE           mode processing or parsing.
+       ```
+       
 
 TODO
 ==================
-1. [ ] command line arguments with user defined inputs
+1. [x] command line arguments with user defined inputs
 2. [x] Add support for own track checking from list of midis
-3. [x] PYPI
+3. [x] ~~PYPI~~ (cancelled)
         
     
     
