@@ -28,7 +28,7 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
         The default mode is processing the list of midi files
     2. To now generate the dense dataset run the following  code set the inference mode to parsing
         ```py
-         python inference.py --mode 'process' 
+         python inference.py --mode 'parse' 
         ```
 
     3. Run help:
