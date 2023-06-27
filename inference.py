@@ -4,17 +4,20 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def functiones(args):
-    mode = 'parse'
+    mode = 'process'
     #Process 
     if mode == args.mode:
+        print('Beginning Processing phase, please wait ......')
         processor = MidiFileProcessor(args.filepath)
         processor.get_listItems(args.tracks)
+        print('writing dumps to utilities directory 8)')
     #Parse
     else:
+        print('Beginning Parsing phase, please wait ......')
         drive = MidiParser(args.output) # parser object
         drive.parse() # parse the midi dir based on the json conditional list of same track files
         # you will endup with a pianoroll dataset at the root of your project dir
-
+        print('writing npz to root directory 8)')
 
 def main():
     """Parse and return the command line arguments."""
@@ -37,7 +40,7 @@ def main():
     parser.add_argument(
         "--mode",
         type=str,
-        default='parse',
+        default='process',
         help="mode processing or parsing.",
     )
     args = parser.parse_args()

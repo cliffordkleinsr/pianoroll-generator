@@ -1,6 +1,7 @@
 import glob as glob, numpy as np, json
 from os.path import join
 from pypianoroll import Multitrack
+from tqdm import tqdm
 
 class MidiParser(Multitrack):
     def __init__(
@@ -37,6 +38,7 @@ class MidiParser(Multitrack):
                 'num_timestep': 48,
                 'beat_resolution': self.BEAT_RESOLUTION,
         }
+        progress_bar = tqdm(total=len(self.get_items()), desc="Parsing Files", unit="it", ncols=80)
         
         for filename in self.get_items():
             # Parse the MIDI file into multitrack pianoroll
@@ -81,7 +83,9 @@ class MidiParser(Multitrack):
                         RESHAPE_PARAMS['num_pitch'], RESHAPE_PARAMS['num_track'])
 
             #print('New shape: ', result.shape)
-            
+            progress_bar.update(1)
+
+        progress_bar.close()
         # NOTE: You might want to shuffle the training data here
         np.savez_compressed(
             self.resulting_fname, nonzero=np.array(result.nonzero()),
