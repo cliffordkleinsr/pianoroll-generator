@@ -27,7 +27,7 @@ class MidiFileProcessor(Multitrack):
                 len(gud_f.tracks)
                 str_files +=[f]
                 clean_files += [gud_f]
-            except (RuntimeWarning, ValueError, IndexError, OSError, mido.midifiles.meta.KeySignatureError) as e:
+            except (ValueError, IndexError, OSError, mido.midifiles.meta.KeySignatureError) as e:
                 continue
             
             progress_bar.update(1)
