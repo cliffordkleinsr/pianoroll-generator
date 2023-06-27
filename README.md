@@ -20,11 +20,12 @@ Pianoroll-generator A package to generate pianoroll (NPZ) datasets
     - TO GENERATE A DENSE NPZ DATASET, first Download some midi files and place them in the ***midis*** directory 
     > ***Note*** the midis is an arbitrary dir, it can be named A anything
     - On either your python terminal or idle shell run the following codes:
-    1. To create a list of files with common tracks default mode is processing the list of midi files
+    1. To create a list of files with common tracks
  
         ```PY
         python inference.py -t 'Your specified number of tracks'
         ```
+        The default mode is processing the list of midi files
     2. To now generate the dense dataset run the following  code set the inference mode to parsing
         ```py
          python inference.py --mode 'process' 
